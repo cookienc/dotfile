@@ -1,0 +1,50 @@
+"ideavimrc 기본 설정 23/01/28
+" 기본 설정
+source ~/.vimrc
+let mapleader=" "
+nmap <leader><leader>r :source ~/.ideavimrc
+
+" 인텔리제이 설정
+""" MOVE
+nnoremap <leader>gc :action GotoClass<CR>
+nnoremap <leader>gi :action GotoImplementation<CR>
+nnoremap <leader>gd :action GotoDeclaration<CR>
+nnoremap <leader>gp :action GotoSuperMethod<CR>
+nnoremap <leader>gt :action GotoTest<CR>
+nnoremap <leader>gb :action Back<CR>
+nnoremap <leader>gf :action Forward<CR>
+nnoremap <leader>ca :action CloseAllEditorsButActive<CR>
+
+""" RUN & DEBUG
+nnoremap <leader>bb :action ToggleLineBreakpoint<CR>
+nnoremap <leader>cc :action Run<CR>
+nnoremap <leader>cr :action RunClass<CR>
+nnoremap <leader>ct :action Debug<CR>
+
+""" REFACTOR
+nnoremap <leader>rm :action ExtractMethod<CR>
+nnoremap <leader>rn :action RenameElement<CR>
+nnoremap <leader>rn :action RenameFile<CR>
+nnoremap <leader>rv :action IntroduceVariable<CR>
+nnoremap <leader>rp :action IntroduceParameter<CR>
+nnoremap <leader>rc :action IntroduceConstant<CR>
+nnoremap <leader>ri :action Inline<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"" Plugins
+""" vim-surround
+set surround
+
+""" vim-nerdtree
+Plug 'preservim/nerdtree'
+nmap <leader>n :NERDTree<cr>
+
+"""vim-commentary
+set commentary
+
+""" vim-multiple-cursors
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+map mc <A-n>
+map mx <A-x>
+map mp <A-p>
+
