@@ -1,0 +1,32 @@
+# 23/01/28
+keybinding:
+  universal:
+    appendNewline: '<tab>'
+
+customCommands:
+  - key: 'M'
+    prompts:
+      - type: 'menu'
+        title: 'Select Option'
+        options:
+          - name: 'Squash'
+            description: 'Merge Squash'
+            value: '--squash'
+          - name: 'FastForward'
+            description: 'Merge FastForward'
+            value: '--ff'
+          - name: 'No-FastForward'
+            description: 'Merge FastForward'
+            value: '--no-ff'
+    command: 'git merge {{index .PromptResponses 0}} {{.SelectedLocalBranch.Name}}'
+    context: 'localBranches'
+    description: 'Merge Squash'
+  - key: '<f1>'
+    context: 'files'
+    command: 'git checkout --ours  -- {{.SelectedPath}}'
+    description: 'Merge ours(HEAD)'
+  - key: '<f2>'
+    context: 'files'
+    command: 'git checkout --theirs -- {{.SelectedPath}}'
+    description: 'Merge theirs'
+
