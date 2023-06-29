@@ -1,34 +1,63 @@
-"ideavimrc 기본 설정 23/01/28
+"ideavimrc 기본 설정 23/06/30
 " 기본 설정
 source ~/.vimrc
-let mapleader=" "
-nmap <leader><leader>r :source ~/.ideavimrc
+:let mapleader=" "
+nmap <leader><leader>r :source ~/.ideavimrc <CR>
 
 " 인텔리제이 설정
+""" GIT
+nnoremap <leader>ga :action Annotate<CR>
+
 """ MOVE
 nnoremap <leader>gc :action GotoClass<CR>
 nnoremap <leader>gi :action GotoImplementation<CR>
 nnoremap <leader>gd :action GotoDeclaration<CR>
 nnoremap <leader>gp :action GotoSuperMethod<CR>
 nnoremap <leader>gt :action GotoTest<CR>
+nnoremap <leader>gu :action GotoUrlAction<CR>
 nnoremap <leader>gb :action Back<CR>
 nnoremap <leader>gf :action Forward<CR>
+
+nnoremap <leader>su :action ShowUsages<CR>
+
 nnoremap <leader>ca :action CloseAllEditorsButActive<CR>
+
+nnoremap <A-j> :action MoveLineDown<CR>
+vnoremap <A-j> :action MoveLineDown<CR>
+nnoremap <A-k> :action MoveLineUp<CR>
+vnoremap <A-k> :action MoveLineUp<CR>
+
+nnoremap <A-S-j> :action MoveStatementDown<CR>
+vnoremap <A-S-j> :action MoveStatementDown<CR>
+nnoremap <A-S-k> :action MoveStatementUp<CR>
+vnoremap <A-S-k> :action MoveStatementUp<CR>
+nnoremap ]e :action GotoNextError<CR>
+nnoremap [e :action GotoPreviousError<CR>
 
 """ RUN & DEBUG
 nnoremap <leader>bb :action ToggleLineBreakpoint<CR>
 nnoremap <leader>cc :action Run<CR>
 nnoremap <leader>cr :action RunClass<CR>
-nnoremap <leader>ct :action Debug<CR>
+nnoremap <leader>dd :action Debug<CR>
+nnoremap <leader>ct :action RunCoverage<CR>
+nnoremap <leader>hc :action HideCoverage<CR>
+nnoremap <leader>ic :action InspectCode<CR>
 
 """ REFACTOR
-nnoremap <leader>rm :action ExtractMethod<CR>
-nnoremap <leader>rn :action RenameElement<CR>
-nnoremap <leader>rn :action RenameFile<CR>
-nnoremap <leader>rv :action IntroduceVariable<CR>
-nnoremap <leader>rp :action IntroduceParameter<CR>
-nnoremap <leader>rc :action IntroduceConstant<CR>
-nnoremap <leader>ri :action Inline<CR>
+noremap <leader>rm :action ExtractMethod<CR>
+noremap <leader>rn :action RenameElement<CR>
+noremap <leader>rv :action IntroduceVariable<CR>
+noremap <leader>rp :action IntroduceParameter<CR>
+noremap <leader>rc :action IntroduceConstant<CR>
+noremap <leader>ri :action Inline<CR>
+noremap <leader>ii :action ImplementMethods<CR>
+noremap <leader>oo :action OverrideMethods<CR>
+
+""" WINDOW
+nnoremap <leader>w <C-w>
+nnoremap <leader>sp :sp<CR>
+nnoremap <leader>vp :vsp<CR>
+nnoremap <leader>dm :action DSM.Analyze<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 "" Plugins
@@ -37,14 +66,17 @@ set surround
 
 """ vim-nerdtree
 Plug 'preservim/nerdtree'
-nmap <leader>n :NERDTree<cr>
+nmap <leader>n :NERDTreeFind<cr>
 
 """vim-commentary
 set commentary
 
 """ vim-multiple-cursors
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+"Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+set multiple-cursors
 map mc <A-n>
 map mx <A-x>
 map mp <A-p>
 
+""" sneak
+"set sneak
