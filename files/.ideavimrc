@@ -59,6 +59,10 @@ nnoremap <leader>sp :sp<CR>
 nnoremap <leader>vp :vsp<CR>
 nnoremap <leader>dm :action DSM.Analyze<CR>
 
+""" GITHUB
+nnoremap <leader>pr :action ActivatePullRequestsToolWindow<CR>
+nnoremap <leader>pc :action Github.PullRequest.Diff.Comment.Create<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""
 "" Plugins
 """ vim-surround
@@ -66,7 +70,7 @@ set surround
 
 """ vim-nerdtree
 Plug 'preservim/nerdtree'
-nmap <leader>n :NERDTreeFind<cr>
+nmap <leader>e :NERDTreeFind<cr>
 
 """vim-commentary
 set commentary
@@ -80,3 +84,33 @@ map mp <A-p>
 
 """ sneak
 "set sneak
+
+" vim 설정
+nmap H ^
+nmap L $
+set ignorecase "대소문자 무시"
+set smartcase "검색시 대소문자 smart하게 구별"
+set hlsearch "검색 시 하이라이팅"
+set incsearch "찾을 때마다 이동"
+set nu rnu "행번호 + 상대적 행번호"
+set autoindent "자동 들여쓰기"
+set scrolloff=3
+set wildmode=longest,list
+set ts=4 "\\t 탭 크기"
+set sts=4 "tab 크기"
+set sw=4 "자동 들여쓰기 스페이스 값"
+set expandtab "tab을 space로"
+set autowrite "자동 저장"
+set autoread "작업 중인 파일이 외부에서 변경 되면 자동으로 불러옴"
+set cindent "c프로그래밍 용 들여쓰기"
+set bs=eol,start,indent
+set history=256 "vi 편집기록 기록 갯수"
+set laststatus=2
+set showmatch "괄호 match 하이라이트"
+set smarttab "괄호 match"
+set smartindent "전처리 문구를 들여쓰기 하지 않음"
+set ruler "커서 위치 출력"
+set nocompatible "VI와 호환 안 됨"
+set clipboard=unnamed
+set fileencodings=utf8,euc-kr "파일 인코딩 설정"
+set encoding=utf8
