@@ -1,4 +1,4 @@
-"ideavimrc 기본 설정 23/06/30
+"ideavimrc 기본 설정 23/11/16
 " 기본 설정
 source ~/.vimrc
 :let mapleader=" "
